@@ -6,6 +6,7 @@ namespace ProjectVaka.Base
 {
     public abstract class MapInfo
     {
+        public int i = 0;
         protected abstract T ForceAcceptableValueImpl<T>(string mapInfo);
 
         public T ForceAcceptableValue<T>(string info)
@@ -16,7 +17,7 @@ namespace ProjectVaka.Base
             {
                 try
                 {
-                    Console.WriteLine("MapInfo. 1. Çağırım");
+                    Console.WriteLine("MapInfo. "+ i++ +". Çağırım");
                     string userEntry = StaticMethods.EnterInformation(info);
                     entity = ForceAcceptableValueImpl<T>(userEntry);
                     if (entity != null)
@@ -31,6 +32,11 @@ namespace ProjectVaka.Base
 
             Console.WriteLine("MapInfo. son çağırım");
             return entity;
+        }
+
+        public void TestFunction()
+        {
+            Console.WriteLine("Sadece buradaki metod çalıştı.");
         }
     }
 }

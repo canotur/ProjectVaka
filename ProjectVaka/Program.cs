@@ -19,7 +19,10 @@ namespace ProjectVaka
             // Ya venüs e gidecekse
             // Ya robot fakat uçabilen bir robot da varsa? hem marsa hem de venüs e istediğini gönderebilirsin
             string mapInfo = "\nGezilebilecek alanının sırasıyla arasında bir boşluk bırakarak 5 veya 5ten büyük olacak şekilde En uç X ve Y koordinatlarını giriniz!\nÖrnek: 10 15";
-            IPlanet mars = marsEntry.ForceAcceptableValue<IPlanet>(mapInfo); 
+            
+            marsEntry.TestFunction();   // Bununla 
+            IPlanet mars = marsEntry.ForceAcceptableValue<IPlanet>(mapInfo);  // bunun arasındaki farkı anlamaya çalışın.
+
             mars.AddRobotsToPlanet(RobotCount);
             mars.DrawPlanet();
             mars.WriteInformations();
